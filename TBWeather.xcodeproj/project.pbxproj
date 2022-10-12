@@ -42,6 +42,10 @@
 		65EFB9EB28F753710057F1B4 /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EFB9EA28F753710057F1B4 /* AppFactory.swift */; };
 		65EFB9ED28F7549B0057F1B4 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EFB9EC28F7549B0057F1B4 /* Router.swift */; };
 		65EFB9EF28F75F4A0057F1B4 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EFB9EE28F75F4A0057F1B4 /* ForecastView.swift */; };
+		65EFB9F928F762070057F1B4 /* ViewCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EFB9F828F762070057F1B4 /* ViewCodable.swift */; };
+		65EFB9FC28F763F00057F1B4 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 65EFB9FB28F763F00057F1B4 /* SDWebImage */; };
+		65EFB9FF28F76CF40057F1B4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65EFB9FE28F76CF40057F1B4 /* Localizable.strings */; };
+		65EFBA0128F76DFB0057F1B4 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EFBA0028F76DFB0057F1B4 /* Localizable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +105,9 @@
 		65EFB9EA28F753710057F1B4 /* AppFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
 		65EFB9EC28F7549B0057F1B4 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		65EFB9EE28F75F4A0057F1B4 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
+		65EFB9F828F762070057F1B4 /* ViewCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodable.swift; sourceTree = "<group>"; };
+		65EFB9FE28F76CF40057F1B4 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		65EFBA0028F76DFB0057F1B4 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65EFB9FC28F763F00057F1B4 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +185,7 @@
 		65491B2B28F709180068B0A4 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				65EFB9FD28F76CDE0057F1B4 /* Localization */,
 				65491B2E28F709670068B0A4 /* LaunchScreen */,
 				65491B2D28F709550068B0A4 /* Properties */,
 				65491B2C28F7092A0068B0A4 /* Assets */,
@@ -212,6 +221,7 @@
 		65491B2F28F709800068B0A4 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				65EFB9F728F761F10057F1B4 /* Utils */,
 				65EFB9AF28F731C30057F1B4 /* Core */,
 				65EFB99B28F70EFA0057F1B4 /* Network */,
 				65491B3128F709950068B0A4 /* Modules */,
@@ -381,6 +391,23 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		65EFB9F728F761F10057F1B4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				65EFB9F828F762070057F1B4 /* ViewCodable.swift */,
+				65EFBA0028F76DFB0057F1B4 /* Localizable.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		65EFB9FD28F76CDE0057F1B4 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				65EFB9FE28F76CF40057F1B4 /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -397,6 +424,9 @@
 			dependencies = (
 			);
 			name = TBWeather;
+			packageProductDependencies = (
+				65EFB9FB28F763F00057F1B4 /* SDWebImage */,
+			);
 			productName = TBWeather;
 			productReference = 65491AF828F707A40068B0A4 /* TBWeather.app */;
 			productType = "com.apple.product-type.application";
@@ -470,6 +500,9 @@
 				Base,
 			);
 			mainGroup = 65491AEF28F707A40068B0A4;
+			packageReferences = (
+				65EFB9FA28F763EF0057F1B4 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 65491AF928F707A40068B0A4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -487,6 +520,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65491B0828F707A50068B0A4 /* LaunchScreen.storyboard in Resources */,
+				65EFB9FF28F76CF40057F1B4 /* Localizable.strings in Resources */,
 				65EFB9C128F74DA80057F1B4 /* Secrets.plist in Resources */,
 				65491B0528F707A50068B0A4 /* Assets.xcassets in Resources */,
 			);
@@ -518,8 +552,10 @@
 				65EFB9E328F752FE0057F1B4 /* WeatherWorker.swift in Sources */,
 				65EFB9A928F716D80057F1B4 /* Endpoint+Extensions.swift in Sources */,
 				65EFB9A728F713E50057F1B4 /* URLRequestBuilder.swift in Sources */,
+				65EFB9F928F762070057F1B4 /* ViewCodable.swift in Sources */,
 				65EFB9E628F752FE0057F1B4 /* WeatherInteractor.swift in Sources */,
 				65EFB9B328F732B90057F1B4 /* Weather.swift in Sources */,
+				65EFBA0128F76DFB0057F1B4 /* Localizable.swift in Sources */,
 				65EFB9E228F752FE0057F1B4 /* WeatherPresenter.swift in Sources */,
 				65EFB9E428F752FE0057F1B4 /* WeatherRouter.swift in Sources */,
 				65EFB9EB28F753710057F1B4 /* AppFactory.swift in Sources */,
@@ -869,6 +905,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		65EFB9FA28F763EF0057F1B4 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		65EFB9FB28F763F00057F1B4 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 65EFB9FA28F763EF0057F1B4 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 65491AF028F707A40068B0A4 /* Project object */;
 }
