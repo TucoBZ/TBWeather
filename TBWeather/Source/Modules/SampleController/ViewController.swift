@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         let service = WeatherService()
         
         Task {
-            let forecast = try? await service.getWeatherForecast(at: Coordinate(longitude: -118.491227, latitude: 34.0194704), unit: .standard)
+            let forecast = try? await service.getWeatherForecast(at: Coordinate(longitude: -118.491227, latitude: 34.0194704), unit: .metric)
             print(forecast)
             print(forecast?.currentWeatherCondition)
         }
