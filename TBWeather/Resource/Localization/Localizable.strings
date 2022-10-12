@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  TBWeather
+
+  Created by Túlio Bazan da Silva on 12/10/22.
+  Copyright © 2022 TBZN. All rights reserved.
+*/
+
+"TBWeather.WeatherViewModel.WeatherViewLocalization.minimumTemperature"= "Low: %.0f%@";
+"TBWeather.WeatherViewModel.WeatherViewLocalization.maximumTemperature"= "High: %.0f%@";
+"TBWeather.WeatherViewModel.WeatherViewLocalization.windDescription"= "Wind: %.0f%@ (%iº)";
+

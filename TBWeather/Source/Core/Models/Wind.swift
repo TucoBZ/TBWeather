@@ -7,7 +7,7 @@
 
 struct Wind: Decodable {
     let speed: Double
-    let degrees: Double
+    let degrees: Int
     
     enum CodingKeys: String, CodingKey {
         case speed

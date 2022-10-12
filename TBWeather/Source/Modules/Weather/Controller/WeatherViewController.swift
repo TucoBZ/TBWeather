@@ -17,7 +17,7 @@ final class WeatherViewController: UIViewController {
     private var viewModel: WeatherViewModel?
     private var router: WeatherRouterInput?
     private var interactor: WeatherInteractorInput?
-    private var moduleView: WeatherView?
+    private var moduleView: ForecastView?
 
     // MARK: View lifecycle
 
@@ -46,8 +46,8 @@ final class WeatherViewController: UIViewController {
     }
 
     private func setupView() {
-        moduleView = WeatherView()
-        moduleView?.delegate = self
+        moduleView = ForecastView()
+        //moduleView?.delegate = self
         self.view = moduleView
     }
 }

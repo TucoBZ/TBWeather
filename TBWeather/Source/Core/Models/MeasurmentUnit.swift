@@ -21,7 +21,7 @@ enum MeasurementUnit: String  {
     var windSpeedUnit: String {
         switch self {
         case .standard, .metric: return "m/s"
-        case .imperial: return "miles/h"
+        case .imperial: return "mph"
         }
     }
 }
