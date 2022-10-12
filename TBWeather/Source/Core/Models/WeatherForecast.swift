@@ -10,6 +10,7 @@ struct WeatherForecast: Decodable {
     let weatherConditions: [WeatherCondition]
     let weather: Weather
     let wind: Wind
+    let locationName: String
     
     var currentWeatherCondition: WeatherCondition? { return weatherConditions.first }
     
@@ -18,5 +19,6 @@ struct WeatherForecast: Decodable {
         case weatherConditions = "weather"
         case weather = "main"
         case wind
+        case locationName = "name"
     }
 }

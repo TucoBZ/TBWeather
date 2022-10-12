@@ -10,12 +10,13 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var factory: AppFactory?
 
     func scene(_ scene: UIScene,
                willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
 
+        setupDependencies()
         applicationStart(with: scene)
     }
 
@@ -49,11 +50,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 }
 
 extension SceneDelegate {
-    func applicationStart(with scene: UIScene) {
+    private func setupDependencies() {
+        factory = AppFactory()
+    }
+    
+    private func applicationStart(with scene: UIScene) {
         guard let scene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = ViewController()
+        window?.rootViewController = factory?.makeWeather()
         window?.makeKeyAndVisible()
     }
 }
