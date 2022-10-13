@@ -10,6 +10,7 @@ import UIKit
 
 protocol WeatherInteractorInput {
     func fetchForecast()
+    func updateMeasurementUnit(_ unit: MeasurementUnit)
 }
 
 final class WeatherInteractor {
@@ -28,7 +29,7 @@ final class WeatherInteractor {
     }
     
     private func getCurrentMeasurementUnit() -> MeasurementUnit {
-        return .metric
+        return worker.getCurrentMeasurementUnit()
     }
 }
 
@@ -47,6 +48,10 @@ extension WeatherInteractor: WeatherInteractorInput {
             }
         }
     }
+    
+    func updateMeasurementUnit(_ unit: MeasurementUnit) {
+        worker.updateMeasurementUnit(unit)
+    }
 }
 
 private extension WeatherInteractor {
@@ -57,6 +62,6 @@ private extension WeatherInteractor {
     }
     
     func handle(error: Error) {
-        
+        presenter.presentEmptyState()
     }
 }

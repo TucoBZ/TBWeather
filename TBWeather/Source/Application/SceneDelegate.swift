@@ -55,10 +55,11 @@ extension SceneDelegate {
     }
     
     private func applicationStart(with scene: UIScene) {
-        guard let scene = (scene as? UIWindowScene) else { return }
+        guard let scene = (scene as? UIWindowScene),
+              let initialController = factory?.makeWeather() else { return }
         
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = factory?.makeWeather()
+        window?.rootViewController = UINavigationController(rootViewController: initialController)
         window?.makeKeyAndVisible()
     }
 }

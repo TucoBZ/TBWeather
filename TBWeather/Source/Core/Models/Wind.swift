@@ -5,7 +5,7 @@
 //  Created by Túlio Bazan da Silva on 12/10/22.
 //
 
-struct Wind: Decodable {
+public struct Wind: Decodable {
     let speed: Double
     let degrees: Int
     

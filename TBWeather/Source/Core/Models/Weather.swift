@@ -5,7 +5,7 @@
 //  Created by Túlio Bazan da Silva on 12/10/22.
 //
 
-struct Weather: Decodable {
+public struct Weather: Decodable {
     let temperature: Double
     let minimumTemperature: Double
     let maximumTemperature: Double

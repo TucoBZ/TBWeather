@@ -5,7 +5,7 @@
 //  Created by Túlio Bazan da Silva on 12/10/22.
 //
 
-struct WeatherCondition: Decodable {
+public struct WeatherCondition: Decodable {
     let identifier: Double
     let group: WeatherGroup
     let description: String

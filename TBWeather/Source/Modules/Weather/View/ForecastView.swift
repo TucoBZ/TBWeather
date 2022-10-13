@@ -132,6 +132,13 @@ final class ForecastView: UIView {
         minimumTemperatureLabel.text = viewModel.minimumTemperature
         maximumTemperatureLabel.text = viewModel.maximumTemperature
         windLabel.text = viewModel.windDescription
+        
+        stackView.isHidden = false
+        stackView.showViewAnimated()
+    }
+    
+    func hideContent() {
+        stackView.isHidden = true
     }
 
 }

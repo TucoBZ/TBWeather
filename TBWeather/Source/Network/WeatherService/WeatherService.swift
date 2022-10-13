@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class WeatherService {
+public final class WeatherService {
     
     private let client: RESTClientInterface
     
@@ -18,7 +18,7 @@ final class WeatherService {
 
 extension WeatherService: WeatherServiceInterface {
     
-    func getWeatherForecast(at coordinate: Coordinate, unit: MeasurementUnit?) async throws -> WeatherForecast {
+    public func getWeatherForecast(at coordinate: Coordinate, unit: MeasurementUnit?) async throws -> WeatherForecast {
         let endpoint = WeatherEndpoint(coordinate: coordinate, unit: unit)
         
         return try await client.request(type: WeatherForecast.self, endpoint: endpoint)

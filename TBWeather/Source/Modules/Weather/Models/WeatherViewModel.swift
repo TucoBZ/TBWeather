@@ -21,6 +21,8 @@ struct WeatherViewModel {
         case minimumTemperature
         case maximumTemperature
         case windDescription
+        case changeMessurementUnit
+        case cancelActionSheet
     }
     
     init(model: WeatherModel) {

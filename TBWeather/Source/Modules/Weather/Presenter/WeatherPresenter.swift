@@ -30,6 +30,6 @@ extension WeatherPresenter: WeatherPresenterInput {
     }
     
     func presentEmptyState() {
-        
+        viewController?.presentEmptyState()
     }
 }

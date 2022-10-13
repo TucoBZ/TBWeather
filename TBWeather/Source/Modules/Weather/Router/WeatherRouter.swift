@@ -8,7 +8,9 @@
 
 import UIKit
 
-protocol WeatherRouterInput {}
+protocol WeatherRouterInput {
+    func showMeasurementUnitSelection(completion: @escaping ((UIAlertAction) -> ()))
+}
 
 final class WeatherRouter: Router {
 
@@ -21,4 +23,12 @@ final class WeatherRouter: Router {
     
 }
 
-extension WeatherRouter: WeatherRouterInput {}
+extension WeatherRouter: WeatherRouterInput {
+    
+    func showMeasurementUnitSelection(completion: @escaping ((UIAlertAction) -> ())) {
+        let actionSheetController = factory.makeMeasurementUnitSelection(completion: completion)
+        actionSheetController.popoverPresentationController?.barButtonItem = source?.navigationItem.rightBarButtonItem
+        present(actionSheetController, animated: true)
+    }
+    
+}

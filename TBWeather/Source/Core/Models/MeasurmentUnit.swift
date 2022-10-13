@@ -5,7 +5,7 @@
 //  Created by Túlio Bazan da Silva on 12/10/22.
 //
 
-enum MeasurementUnit: String  {
+public enum MeasurementUnit: String, CaseIterable, Codable, Localizable {
     case standard
     case metric
     case imperial

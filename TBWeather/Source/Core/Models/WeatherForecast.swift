@@ -5,7 +5,7 @@
 //  Created by Túlio Bazan da Silva on 12/10/22.
 //
 
-struct WeatherForecast: Decodable {
+public struct WeatherForecast: Decodable {
     let coordinate: Coordinate
     let weatherConditions: [WeatherCondition]
     let weather: Weather

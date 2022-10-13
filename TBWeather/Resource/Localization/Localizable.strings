@@ -9,4 +9,8 @@
 "TBWeather.WeatherViewModel.WeatherViewLocalization.minimumTemperature"= "Low: %.0f%@";
 "TBWeather.WeatherViewModel.WeatherViewLocalization.maximumTemperature"= "High: %.0f%@";
 "TBWeather.WeatherViewModel.WeatherViewLocalization.windDescription"= "Wind: %.0f%@ (%iº)";
+"TBWeather.WeatherViewModel.WeatherViewLocalization.changeMessurementUnit"= "Select preferred Unit:";
+"TBWeather.WeatherViewModel.WeatherViewLocalization.cancelActionSheet"= "Cancel";
 
+"TBWeather.EmptyStateView.EmptyStateLoaclization.defaultDescription" = "An unexpected error has occurred. Try again later.";
+"TBWeather.EmptyStateView.EmptyStateLoaclization.tryAgain" = "Try Again";

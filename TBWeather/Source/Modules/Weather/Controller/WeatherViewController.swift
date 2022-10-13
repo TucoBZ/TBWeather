@@ -10,9 +10,10 @@ import UIKit
 
 protocol WeatherViewControllerInput: AnyObject {
     func updateView(viewModel: WeatherViewModel)
+    func presentEmptyState()
 }
 
-final class WeatherViewController: UIViewController {
+final class WeatherViewController: BaseViewController {
 
     private var viewModel: WeatherViewModel?
     private var router: WeatherRouterInput?
@@ -23,9 +24,7 @@ final class WeatherViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.title = "VIP"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        addChangeUnitButton()
         loadContent()
     }
 
@@ -34,6 +33,9 @@ final class WeatherViewController: UIViewController {
     }
 
     private func loadContent() {
+        showLoading()
+        hideEmptyState()
+        moduleView?.hideContent()
         interactor?.fetchForecast()
     }
 
@@ -47,17 +49,50 @@ final class WeatherViewController: UIViewController {
 
     private func setupView() {
         moduleView = ForecastView()
-        //moduleView?.delegate = self
         self.view = moduleView
+    }
+    
+    override func didTryAgain() {
+        loadContent()
+    }
+        
+}
+
+// MARK: Measurement Unit Configuration
+
+extension WeatherViewController {
+    private func addChangeUnitButton() {
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "thermometer.sun"),
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(showMeasurementUnitSelection))
+    }
+    
+    @objc
+    private func showMeasurementUnitSelection() {
+        router?.showMeasurementUnitSelection(completion: handleActionSelection(action:))
+    }
+    
+    private func handleActionSelection(action: UIAlertAction) {
+        guard let actionTitle = action.title , let unit = MeasurementUnit(rawValue: actionTitle) else { return }
+        interactor?.updateMeasurementUnit(unit)
+        loadContent()
     }
 }
 
 extension WeatherViewController: WeatherViewControllerInput {
     
     func updateView(viewModel: WeatherViewModel) {
+        self.hideLoading()
         self.viewModel = viewModel
         self.moduleView?.updateView(with: viewModel)
     }
+    
+    func presentEmptyState() {
+        self.hideLoading()
+        moduleView?.hideContent()
+        showEmptyState()
+    }
+    
 }
-
-extension WeatherViewController: WeatherViewDelegate {}

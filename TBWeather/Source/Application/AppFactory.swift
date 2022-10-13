@@ -11,6 +11,7 @@ import UIKit
 
 protocol AppFactoryProtocol: AnyObject {
     func makeWeather() -> UIViewController
+    func makeMeasurementUnitSelection(completion: @escaping ((UIAlertAction) -> ())) -> UIViewController
 }
 
 final class AppFactory {
@@ -43,5 +44,22 @@ extension AppFactory: AppFactoryProtocol {
         return viewController
     }
     
+    func makeMeasurementUnitSelection(completion: @escaping ((UIAlertAction) -> ())) -> UIViewController {
+        let actionSheetController = UIAlertController(title: WeatherViewModel.WeatherViewLocalization.changeMessurementUnit.localized,
+                                                      message: nil,
+                                                      preferredStyle: .actionSheet)
+        
+        MeasurementUnit.allCases.forEach {
+            let action = UIAlertAction(title: $0.rawValue,
+                                       style: .default,
+                                       handler: completion)
+            
+            actionSheetController.addAction(action)
+        }
+
+        actionSheetController.addAction(UIAlertAction(title: WeatherViewModel.WeatherViewLocalization.cancelActionSheet.localized,
+                                                      style: .cancel))
+        return actionSheetController
+    }
     
 }
