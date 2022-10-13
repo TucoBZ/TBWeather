@@ -6,7 +6,7 @@
 //  Copyright © 2022 TBZN. All rights reserved.
 //
 
-import UIKit
+import WeatherCore
 
 struct WeatherModel {
     let forecast: WeatherForecast

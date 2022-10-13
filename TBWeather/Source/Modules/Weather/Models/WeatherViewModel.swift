@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WeatherCore
 
 struct WeatherViewModel {
     let locationName: String

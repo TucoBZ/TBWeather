@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WeatherCore
 
 protocol WeatherViewControllerInput: AnyObject {
     func updateView(viewModel: WeatherViewModel)

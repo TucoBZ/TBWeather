@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import WeatherCore
+import NetworkInterface
 
 protocol WeatherWorkerInput {
     func updateMeasurementUnit(_ unit: MeasurementUnit)

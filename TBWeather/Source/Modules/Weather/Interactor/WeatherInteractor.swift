@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WeatherCore
 
 protocol WeatherInteractorInput {
     func fetchForecast()

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WeatherCore
 
 protocol EmptyStateViewDelegate: AnyObject {
     func didTryAgain()

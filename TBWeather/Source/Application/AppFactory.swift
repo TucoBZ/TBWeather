@@ -8,6 +8,9 @@
 
 import Foundation
 import UIKit
+import WeatherCore
+import NetworkInterface
+import Network
 
 protocol AppFactoryProtocol: AnyObject {
     func makeWeather() -> UIViewController
