@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "NetworkInterface",
     platforms: [
-            .macOS(.v10_14), .iOS(.v13), .tvOS(.v13)
+            .macOS(.v10_15), .iOS(.v13), .tvOS(.v13)
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
@@ -24,9 +24,9 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "NetworkInterface",
-            dependencies: []),
+            dependencies: ["WeatherCore"]),
         .testTarget(
             name: "NetworkInterfaceTests",
-            dependencies: ["NetworkInterface"]),
+            dependencies: ["NetworkInterface", "WeatherCore"]),
     ]
 )
