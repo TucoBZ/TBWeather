@@ -203,7 +203,6 @@
 			isa = PBXGroup;
 			children = (
 				65EFBA0828F785D30057F1B4 /* Extensions */,
-				65EFB99B28F70EFA0057F1B4 /* Network */,
 				65491B3128F709950068B0A4 /* Modules */,
 				65491B3028F709870068B0A4 /* Application */,
 			);
@@ -228,13 +227,6 @@
 				65EFB9C928F7521C0057F1B4 /* Weather */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		65EFB99B28F70EFA0057F1B4 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		65EFB9C928F7521C0057F1B4 /* Weather */ = {
