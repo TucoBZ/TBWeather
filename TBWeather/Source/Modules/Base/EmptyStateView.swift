@@ -44,12 +44,12 @@ final class EmptyStateView: UIView {
         return button
     }()
     
-    weak var delegate: EmptyStateViewDelegate?
-    
     enum EmptyStateLoaclization: Localizable {
         case tryAgain
         case defaultDescription
     }
+    
+    weak var delegate: EmptyStateViewDelegate?
     
     init() {
         super.init(frame: .zero)

@@ -18,22 +18,22 @@ protocol WeatherWorkerInput {
 
 final class WeatherWorker {
     
-    let service: WeatherServiceInterface
+    private let service: WeatherServiceInterface
+    private static var userDefaults: UserDefaults?
     
-    @UserDefault(key: "currentMessureUnit", defaultValue: .standard)
+    @UserDefault(key: "currentMessureUnit", defaultValue: .standard, container: userDefaults ?? .standard )
     var currentMeasurementUnit: MeasurementUnit
     
-    init(service: WeatherServiceInterface) {
+    init(service: WeatherServiceInterface, userDefaults: UserDefaults) {
         self.service = service
+        WeatherWorker.userDefaults = userDefaults
     }
-    
 }
 
 extension WeatherWorker: WeatherWorkerInput {
     func updateMeasurementUnit(_ unit: MeasurementUnit) {
         self.currentMeasurementUnit = unit
     }
-    
     
     func getCurrentMeasurementUnit() -> MeasurementUnit {
         return currentMeasurementUnit

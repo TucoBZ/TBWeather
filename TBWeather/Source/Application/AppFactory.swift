@@ -23,7 +23,6 @@ final class AppFactory {
     init(weatherService: WeatherServiceInterface = WeatherService()) {
         self.weatherService = weatherService
     }
-    
 }
 
 extension AppFactory: AppFactoryProtocol {
@@ -33,7 +32,7 @@ extension AppFactory: AppFactoryProtocol {
         
         let presenter = WeatherPresenter(viewController: viewController)
         
-        let worker = WeatherWorker(service: self.weatherService)
+        let worker = WeatherWorker(service: self.weatherService, userDefaults: .standard)
         
         let router = WeatherRouter(factory: self)
         

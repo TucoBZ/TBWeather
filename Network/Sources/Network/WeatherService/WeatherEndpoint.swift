@@ -16,13 +16,13 @@ struct WeatherEndpoint: Endpoint {
     var parameters: Parameters?
     var body: BodyData?
     
-    init(coordinate: Coordinate, unit: MeasurementUnit?) {
-        guard let api = WheaterAPI.build() else {
-            fatalError("You do not have Secret.plist file set")
+    init(coordinate: Coordinate, unit: MeasurementUnit?, apiSecret: String?) {
+        guard let apiSecret = apiSecret else {
+            fatalError("You do not have Secret set")
         }
         
         parameters = [
-            "appid": api.secret,
+            "appid": apiSecret,
             "lat": "\(coordinate.latitude)",
             "lon": "\(coordinate.longitude)"
         ]

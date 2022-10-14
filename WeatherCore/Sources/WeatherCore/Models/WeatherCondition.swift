@@ -5,11 +5,18 @@
 //  Created by Túlio Bazan da Silva on 12/10/22.
 //
 
-public struct WeatherCondition: Decodable {
+public struct WeatherCondition: Codable, Equatable {
     public let identifier: Double
     public let group: WeatherGroup
     public let description: String
     public let iconIdentifier: String
+    
+    public init(identifier: Double, group: WeatherCondition.WeatherGroup, description: String, iconIdentifier: String) {
+        self.identifier = identifier
+        self.group = group
+        self.description = description
+        self.iconIdentifier = iconIdentifier
+    }
     
     enum CodingKeys: String, CodingKey {
         case identifier = "id"
@@ -18,7 +25,7 @@ public struct WeatherCondition: Decodable {
         case iconIdentifier = "icon"
     }
     
-    public enum WeatherGroup: String, Decodable {
+    public enum WeatherGroup: String, Codable {
         case thunderstorm = "Thunderstorm"
         case drizzle = "Drizzle"
         case rain = "Rain"
@@ -34,5 +41,12 @@ public struct WeatherCondition: Decodable {
         case tornado = "Tornado"
         case clear = "Clear"
         case clouds = "Clouds"
+    }
+    
+    public static func == (lhs: WeatherCondition, rhs: WeatherCondition) -> Bool {
+        return lhs.identifier == rhs.identifier &&
+        lhs.group == rhs.group &&
+        lhs.description == rhs.description &&
+        lhs.iconIdentifier == rhs.iconIdentifier
     }
 }

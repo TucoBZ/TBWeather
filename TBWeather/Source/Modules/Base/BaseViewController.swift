@@ -25,7 +25,6 @@ open class BaseViewController: UIViewController {
         return view
     }()
     
-    
     /// empty state description, override it if yout want to change the default empty state message
     open var emptyStateDescription: String? { nil }
 }

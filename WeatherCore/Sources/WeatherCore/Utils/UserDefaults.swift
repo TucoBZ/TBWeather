@@ -12,7 +12,7 @@ import Foundation
 public struct UserDefault<Value: Codable> {
     let key: String
     let defaultValue: Value
-    var container: UserDefaults = .standard
+    let container: UserDefaults
     public var wrappedValue: Value {
         
         get {
@@ -32,8 +32,9 @@ public struct UserDefault<Value: Codable> {
         
     }
     
-    public init(key: String, defaultValue: Value) {
+    public init(key: String, defaultValue: Value, container: UserDefaults) {
         self.key = key
         self.defaultValue = defaultValue
+        self.container = container
     }
 }
