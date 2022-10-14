@@ -1,6 +1,10 @@
 # TBWeather
 Sample iOS Weather app
 
+![Simulator Screen Recording - iPhone 12 - 2022-10-14 at 01 46 03](https://user-images.githubusercontent.com/6715785/195764591-cd8c42bd-3c95-407d-b080-61777e273735.gif)
+
+![Simulator Screen Recording - iPhone 12 - 2022-10-14 at 01 46 27](https://user-images.githubusercontent.com/6715785/195764620-c5c75e48-e818-4091-8d07-93bcd180f3ef.gif)
+
 # Specs
 - Xcode 13.4 +
 - iOS 13.0 +
