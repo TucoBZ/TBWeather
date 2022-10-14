@@ -1,8 +1,6 @@
 setup:
 	@bundle install
-
-build:
-	@bundle exec pod install
+	@cp Templates/Secrets.plist TBWeather/Resource/Properties/Secrets.plist
 
 clean:
 	@rm -rf *.xcworkspace Pods/ build/
