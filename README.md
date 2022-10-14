@@ -20,4 +20,4 @@ to clean your project folder, run:
 
 # Setup API Keys
 The API keys isn't commit with the code, because this is a public repository.
-If you want to Add your on API Key, set it into `TBWeather/Resource/Properties/Secrets.plist` this file is generated before `make setup`
+If you want to Add your on API Key, set it into `TBWeather/Resource/Properties/Secrets.plist` this file is generated with `make setup`
